@@ -6,7 +6,7 @@ class MainWindow(QtGui.QDialog):
     def __init__(self):
         QtGui.QDialog.__init__(self)
 
-        self.setWindowTitle("Hello Qt")
+        self.setWindowTitle("PacaBackUp")
 
         # Vertical layout
         self.layout = QtGui.QVBoxLayout(self)
