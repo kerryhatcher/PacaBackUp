@@ -33,6 +33,9 @@ class MainWindow(QtGui.QDialog):
         self.connect(self.button, QtCore.SIGNAL("clicked()"), self.buttonClicked)
         #self.button.clicked(self.buttonClicked())
 
+        #Clear AWS Settings
+        #self.connect(self.key_id, QtCore.SIGNAL("focus()"), self.clearSettings)
+
     #def sayHello(self, name):
         # Set the output text
         #self.secret_key.setText("Hello " + name + "!")
@@ -40,4 +43,7 @@ class MainWindow(QtGui.QDialog):
     def buttonClicked(self):
         sender = self.sender()
         self.secret_key.setText("Button Pushed!!")
+
+
+    #def clearSettings(self):
 
