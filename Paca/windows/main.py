@@ -12,32 +12,32 @@ class MainWindow(QtGui.QDialog):
         self.layout = QtGui.QVBoxLayout(self)
 
         # Create widgets
-        self.label = QtGui.QLabel("What's your name?")
-        self.name = QtGui.QLineEdit()
-        self.output = QtGui.QLineEdit()
-        self.output.setReadOnly(True)
-        self.label2 = QtGui.QLabel("What's yo number?")
-        self.button = QtGui.QPushButton("test")
+        self.label = QtGui.QLabel("AWS Keys")
+        self.key_id = QtGui.QLineEdit("Access Key ID")
+        self.secret_key = QtGui.QLineEdit("Secret Access Key")
+        self.secret_key.setReadOnly(True)
+        self.label2 = QtGui.QLabel("Shall I begin?")
+        self.button = QtGui.QPushButton("Engage")
 
         # Add widgets to the layout
         self.layout.addWidget(self.label)
-        self.layout.addWidget(self.name)
-        self.layout.addWidget(self.output)
+        self.layout.addWidget(self.key_id)
+        self.layout.addWidget(self.secret_key)
         self.layout.addWidget(self.label2)
         self.layout.addWidget(self.button)
 
-        # Connect self.name with self.sayHello(name) when text is changed
-        self.connect(self.name, QtCore.SIGNAL("textChanged(const QString&)"), self.sayHello)
+        # Connect self.key_id with self.sayHello(name) when text is changed
+        #self.connect(self.key_id, QtCore.SIGNAL("textChanged(const QString&)"), self.sayHello)
 
         # Button event
         self.connect(self.button, QtCore.SIGNAL("clicked()"), self.buttonClicked)
         #self.button.clicked(self.buttonClicked())
 
-    def sayHello(self, name):
+    #def sayHello(self, name):
         # Set the output text
-        self.output.setText("Hello " + name + "!")
+        #self.secret_key.setText("Hello " + name + "!")
 
     def buttonClicked(self):
         sender = self.sender()
-        self.output.setText("Button Pushed!!")
+        self.secret_key.setText("Button Pushed!!")
 
